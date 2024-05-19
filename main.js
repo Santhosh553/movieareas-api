@@ -1,14 +1,19 @@
 import express from 'express';
 import movieRoute from './routes/movies.routes.js';
+import connectDB from './lib/db.js';
 
 const app = express();
 const PORT = 3000;
+
+// DB Connection
+connectDB();
 
 app.get('/', (req, res) => {
   res.json({ message: 'Hello World!!' });
 });
 
 
+// Middleware
 app.use('/api', movieRoute);
 
 
