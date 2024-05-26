@@ -8,10 +8,13 @@ const PORT = 3000;
 // DB Connection
 connectDB();
 
+// Data Understanding Middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
   res.json({ message: 'Hello World!!' });
 });
-
 
 // Middleware
 app.use('/api', movieRoute);
