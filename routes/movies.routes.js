@@ -3,22 +3,24 @@ import {
     getMovies,
     putMovies,
     updMovies,
-    delMovies
+    delMovies,
+    getMovieDetail
 } from "../controllers/movies.controllers.js";
 
 const router = express.Router();
 
 // For Reading Data
-router.get('/movies', getMovies);
+router.get('/', getMovies);
+router.get('/:id', getMovieDetail);
 
 // For Creating Data
-router.post('/movies', putMovies);
+router.post('/', putMovies);
 
 // For Updating Data
-router.put('/movies/:id', updMovies);
+router.put('/:id', updMovies);
 
 // For Deleting Data
-router.delete('/movies/:id', delMovies);
+router.delete('/:id', delMovies);
 
 
 export default router;

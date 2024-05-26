@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // Middleware
-app.use('/api', movieRoute);
+app.use('/api/movies', movieRoute);
 
 
 app.listen(PORT, () => {
